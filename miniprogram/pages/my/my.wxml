@@ -1,0 +1,5 @@
+<button class="login" type="warn" wx:if="{{isLogin}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+<view class="loginStatus" wx:else>
+  <image src="{{userInfo.avatarUrl}}" class="avatarUrl"></image>
+  <view>{{userInfo.nickName}}</view>
+</view>

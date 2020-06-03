@@ -1,0 +1,11 @@
+page{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 32rpx;
+}
+.avatarUrl{
+  display: block;
+  width: 91rpx;
+  height: 91rpx;
+  border-radius: 10rpx;
+}

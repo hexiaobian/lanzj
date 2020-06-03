@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/trends/trends",
+    "pages/my/my",
+    "pages/detail/detail",
+    "pages/addTrends/addTrends"
+  ],
+
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3cf",
+    "navigationBarTitleText": "览湛江",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#fffff",
+    "selectedColor": "#33ccff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./icons/index.png",
+        "selectedIconPath": "./icons/index-o.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐",
+        "iconPath": "./icons/recommend.png",
+        "selectedIconPath": "./icons/recommend-o.png"
+      },
+      {
+        "pagePath": "pages/trends/trends",
+        "text": "动态",
+        "iconPath": "./icons/trends.png",
+        "selectedIconPath": "./icons/trends-o.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./icons/my.png",
+        "selectedIconPath": "./icons/my-o.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

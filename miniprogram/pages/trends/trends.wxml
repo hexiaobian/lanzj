@@ -1,0 +1,26 @@
+<view>
+  <view class="shade" style="background:url({{avatarUrl}}) no-repeat center"></view>
+  <view class="info">
+    <image src="{{avatarUrl}}" class="avatarUrl"></image>
+    <view>{{nickName}}</view>
+    <button type="primary" bindtap="navToAdd">发布动态</button>
+  </view>
+  <view class="trends" wx:for="{{List}}">
+    <view class="head">
+      <image src="{{item.avatarUrl}}" class="avatarUrl"></image>
+    </view>
+    <view class="main">
+      <view class="mName">{{item.nickName}}</view>
+      <view>{{item.theWord}}</view>
+      <view class="source">
+        <view wx:for='{{item.picUrls}}' wx:for-item="pic">
+          <image src="{{pic}}"></image>
+        </view>
+        <view hidden="{{item.videoUrl==''? true : false}}">
+          <video src="{{item.videoUrl}}"></video>
+        </view>
+      </view>
+      <view class="release">{{item.durTime}}</view>
+    </view>
+  </view>
+</view>

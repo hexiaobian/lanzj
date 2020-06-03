@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="title">
+    <view hover-class="click1" bindtap="click" style="background-color:{{vColor1}}" data-id="1">湛江全览</view>
+    <view hover-class="click2" bindtap="click" style="background-color:{{vColor2}}" data-id="2">了解湛江</view>
+  </view>
+  <view hidden="{{pre1}}" class="map">
+    <image src="../../images/zhanjiang.png" mode="widthFix"></image>
+    <view class="city">
+      <view class="lz"></view>
+      <view class="xw"></view>
+      <view class="ck"></view>
+      <view class="xs"></view>
+      <view class="lj"></view>
+      <view class="pt"></view>
+      <view class="wc"></view>
+      <view class="mz"></view>
+      <view class="sx"></view>
+    </view>
+  </view>
+  <view hidden="{{pre2}}" class="understand">
+    <video id="preview" src="{{videoUrl}}" title="湛江蓝" enable-play-gesture="true" objectFit="cover"show-screen-lock-button="true"></video>
+  </view>
+
+</view>

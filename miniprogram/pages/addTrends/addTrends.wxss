@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon.eot?bz669h');
+  src: url('/fonts/icomoon.eot?bz669h#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?bz669h') format('truetype'),
+    url('/fonts/icomoon.woff?bz669h') format('woff'),
+    url('/fonts/icomoon.svg?bz669h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+textarea{
+  width: 100%;
+  padding-top: 10rpx; 
+
+}
+.upload{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+}
+.share{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+}
+.upload view,.video,.pics view{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 10rpx 20rpx 0 0;
+  border-radius: 20rpx;
+  border: 1px solid #ddd;
+  text-align: center;
+  overflow:hidden;
+}
+.video video{
+  width:100%;
+  height:100%;
+}
+.pics view image{
+  width:100%;
+  height:100%;
+}
+.video,.pics view{
+  position:relative;
+}
+.video .close,.pics view .close{
+  position:absolute;
+  top:5rpx;
+  right:5rpx;
+  width:30rpx;
+  height:30rpx
+}
+.upload view image{
+  width: 140rpx;
+  height:140rpx;
+  margin-top: 30rpx;
+}
+.ready{
+  height: 60rpx;
+  position: relative;
+  top:30rpx;
+  border-bottom: 1px solid #999
+}
+.ready::before{
+  content: '\e947';
+  font-family: 'icomoon';
+  padding-right: 10rpx;
+}
+.ready::after{
+  position: absolute;
+  right: 5rpx;
+  top: 15rpx;
+  content: '\e901';
+  font-family: 'icomoon';
+}
+.publish{
+  width: 90% !important;
+  margin: 55rpx auto 0;
+  font-weight: normal;
+  background-color: #33ccff;
+  color:#ffffff;
+}
+
