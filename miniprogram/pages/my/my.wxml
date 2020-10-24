@@ -1,5 +1,28 @@
-<button class="login" type="warn" wx:if="{{isLogin}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
-<view class="loginStatus" wx:else>
+<button class="login" type="warn" hidden="{{!isLogin}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+<view class="loginStatus" hidden="{{isLogin}}">
   <image src="{{userInfo.avatarUrl}}" class="avatarUrl"></image>
   <view>{{userInfo.nickName}}</view>
+</view>
+<view class="myTrends" hidden="{{isLogin}}">
+  <view class="title">我的动态</view>
+  <view class="oldTrends" wx:for="{{oldTrends}}" hidden="{{oldTrends.length==0}}">
+    <view class="trend" bindtap="getDetail" data-id="{{item._id}}">
+      <view class="date">
+        <view>{{item.addDay.day}}</view>
+        <view>{{item.addDay.month}}月</view>
+      </view>
+      <view class="content">
+        <view class="pics" hidden="{{item.picUrls.length==0}}">
+          <image src="{{item.picUrls[0]}}"></image>
+        </view>
+        <view class="video" hidden="{{item.videoUrl==''}}">
+          <view class="shade"></view>
+          <video src="{{item.videoUrl}}" show-fullscreen-btn="{{false}}"></video>
+        </view>
+        <view class="myWord">{{item.theWord}}</view>
+        <view class="amount" hidden="{{item.picUrls.length==0}}">共{{item.picUrls.length}}张</view>
+      </view>
+    </view>
+  </view>
+  <view class="noTrend" hidden="{{oldTrends.length!=0}}">没有动态哦~</view>
 </view>

@@ -1,0 +1,55 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.shade {
+  position: absolute;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.placeweather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+  color: #666;
+}
+
+.placeweather .place {
+  font-size: 60rpx;
+}
+
+.placeweather .place::before {
+  content: '\e949';
+  font-family: 'icomoon';
+  padding-right: 20rpx;
+}
+
+.placeweather .weather {
+  width: 35vw;
+  height: 20vh;
+}
+
+.placeweather .weather .weather_img {
+  width: 35vw;
+  height: 10vh;
+  text-align: center;
+}
+
+.placeweather .weather .weather_img image {
+  width: 50%;
+}
+
+.placeweather .weather .weather_info {
+  width: 35vw;
+  height: 10vh;
+  text-align: center;
+  font-size: 45rpx;
+}

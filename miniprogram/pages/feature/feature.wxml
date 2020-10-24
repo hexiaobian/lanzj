@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="shade" style="background:url(../../weather/images/{{placeInfo.cond_code}}.png) no-repeat center"></view>
+  <view class="placeweather">
+    <view class="place">{{place}}</view>
+    <view class="weather" bindtap="getDetailWeather" data-place="{{place}}">
+      <view class="weather_img">
+        <image src="../../weather/images/{{placeInfo.cond_code}}.png" mode="widthFix"></image>
+      </view>
+      <view class="weather_info">{{placeInfo.cond_txt}} {{placeInfo.tmp}}℃</view>
+    </view>
+  </view>
+  <view class="viewPort" wx:for="{{portsList}}">
+    <view class="brief" bindtap="getViewDetail" data-id="{{item._id}}">
+      <view class="viewTitle">{{item.viewPorts}}</view>
+      <view class="introduct">{{item.brief}}</view>
+    </view>
+  </view>
+</view>

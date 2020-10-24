@@ -1,5 +1,7 @@
 <view>
-  <view class="shade" style="background:url({{avatarUrl}}) no-repeat center"></view>
+  <view class="shade">
+    <image src="{{avatarUrl}}" mode="heightFix"></image>
+  </view>
   <view class="info">
     <image src="{{avatarUrl}}" class="avatarUrl"></image>
     <view>{{nickName}}</view>
@@ -13,14 +15,46 @@
       <view class="mName">{{item.nickName}}</view>
       <view>{{item.theWord}}</view>
       <view class="source">
-        <view wx:for='{{item.picUrls}}' wx:for-item="pic">
-          <image src="{{pic}}"></image>
+        <view wx:for='{{item.picUrls}}' wx:for-item="pic" capture-bind:tap="getImages" data-images="{{item.picUrls}}">
+          <image src="{{pic}}" capture-bind:tap="preImage" data-index="{{index}}" data-image="{{pic}}"></image>
         </view>
         <view hidden="{{item.videoUrl==''? true : false}}">
-          <video src="{{item.videoUrl}}"></video>
+          <video id="{{item._id}}" src="{{item.videoUrl}}" show-play-btn="{{isPlay}}" show-fullscreen-btn="{{false}}" muted="{{isMuted}}" autoplay="{{true}}" loop="{{true}}" bindtap="videoFullScreen" data-id="{{item._id}}"></video>
         </view>
       </view>
-      <view class="release">{{item.durTime}}</view>
+      <view class="location" hidden="{{item.location==''}}">{{item.location}}</view>
+      <view class="release">
+        <text class="releaseDay">{{item.durTime}}</text>
+        <text bindtap="deleteItem" data-index="{{item._id}}" hidden="{{openid!=item._openid}}">删除</text>
+        <view class="interact">
+          <view class="praise" bindtap="editNum" data-index="{{item._id}}">
+            <image src="{{item.perList.length==0||!item.perList?'../../images/praise.png':'../../images/praise-o.png'}}"></image>
+          </view>
+          <view class="comment" bindtap="getComment" data-index="{{item._id}}" data-num="{{1}}">
+            <image src="../../images/comment.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="perNum" hidden="{{item.perList.length==0||!item.perList}}">
+        <text class="per" wx:for="{{item.perList}}" wx:for-item="nick">{{nick}}</text>
+      </view>
+      <view class="commentContainer">
+        <view class="inputCom" hidden="{{imgCurIndex?imgCurIndex!=item._id:isComment}}">
+          <input value="{{value}}" type="text" placeholder="评论" bindinput='inputTextChange' adjust-position="{{true}}" bindblur="blur" bindfocus="focus"></input>
+          <text class="button" bindtap='sendMsgButton' data-index="{{item._id}}" style="background-color:{{isActive}}">发送</text>
+        </view>
+        <view class="getComment" wx:for="{{item.content}}" wx:for-item="interacts" wx:for-index="pi">
+          <view hidden="{{currentIndex!=item._id}}">
+            <view class="inputCom" hidden="{{i!=pi}}">
+              <input value="{{value}}" type="text" placeholder="{{quiz?'回复'+quiz:'评论'}}" bindinput='inputTextChange' adjust-position="{{true}}" bindblur="blur" bindfocus="focus"></input>
+              <text class="button" bindtap='sendMsgButton' data-index="{{item._id}}" style="background-color:{{isActive}}">发送</text>
+            </view>
+          </view>
+          <view bindtap="getComment" data-i="{{pi}}" data-nick="{{interacts.pos}}" data-num="{{-1}}" data-index="{{item._id}}">
+            <text>{{interacts.pos}}{{interacts.pas?'回复'+interacts.pas:''}}:{{interacts.content}}</text>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

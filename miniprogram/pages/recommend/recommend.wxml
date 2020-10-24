@@ -1,2 +1,8 @@
-<!--pages/recommend/recommend.wxml-->
-<text>pages/recommend/recommend.wxml</text>
+<view class="container">
+  <view class="viewPort" wx:for="{{portsList}}">
+    <view class="brief" bindtap="getViewDetail" data-id="{{item._id}}">
+      <view class="viewTitle">{{item.viewPorts}}</view>
+      <view class="introduct">{{item.brief}}</view>
+    </view>
+  </view>
+</view>

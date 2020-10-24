@@ -1,0 +1,22 @@
+<view class="bg">
+  <image src="../../images/bg1.gif"></image>
+</view>
+<view class="container">
+  <view class="place">{{location}}</view>
+  <view class="actuality">
+    <view class="nowtmp">{{nowWeatherTmp}}℃</view>
+    <view class="nowWeatxt">{{nowWeather}}</view>
+  </view>
+  <view class="situation">
+    <view wx:for="{{forecastWeather}}">
+      <view class="left">
+        <view class="image">
+          <image src="../../weather/images/{{item.cond_code_d}}.png"></image>
+        </view>
+        <text>{{item.time}}</text>
+        <text>{{item.cond_txt_d==item.cond_txt_n?item.cond_txt_n:item.cond_txt_d+'转'+item.cond_txt_n}}</text>
+      </view>
+      <view class="right">{{item.tmp_max}}°/{{item.tmp_min}}°</view>
+    </view>
+  </view>
+</view>

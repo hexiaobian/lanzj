@@ -1,2 +1,44 @@
-<!--miniprogram/pages/detail/detail.wxml-->
-<text>miniprogram/pages/detail/detail.wxml</text>
+<view>
+  <view class="trends" wx:for="{{detail}}">
+    <view class="head">
+      <image src="{{item.avatarUrl}}" class="avatarUrl"></image>
+    </view>
+    <view class="main">
+      <view class="mName">{{item.nickName}}</view>
+      <view>{{item.theWord}}</view>
+      <view class="source">
+        <view wx:for='{{item.picUrls}}' wx:for-item="pic">
+          <image src="{{pic}}"></image>
+        </view>
+        <view hidden="{{item.videoUrl==''? true : false}}">
+          <video src="{{item.videoUrl}}"></video>
+        </view>
+      </view>
+      <view class="location" hidden="{{item.location==''}}">{{item.location}}</view>
+      <view class="clickPer">
+        <view wx:for="{{avatarUrls}}">
+          <image src="{{item}}"></image>
+        </view>
+      </view>
+      <view class="release">
+        <view class="date">
+          <text class="time">{{item.addDay.year}}年{{item.addDay.month}}月{{item.addDay.day}}日</text>
+          <text bindtap="deleteItem" data-index="{{item._id}}">删除</text>
+        </view>
+        <view class="interact">
+          <view class="praise" bindtap="editNum">
+            <image src="{{avatarUrls.length==0?'../../images/praise.png':'../../images/praise.png'}}"></image>
+          </view>
+          <view class="comment">
+            <image src="../../images/comment.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="commentContainer">
+        <view wx:for="{{item.content}}" wx:for-item="interacts">
+          <text>{{interacts.pos}}{{interacts.pas?'回复'+interacts.pas:''}}:{{interacts.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

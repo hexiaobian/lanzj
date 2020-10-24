@@ -1,23 +1,109 @@
-page{
+page {
   width: 100%;
 }
-.login{
+
+.login {
   margin-top: 30rpx;
 }
-.loginStatus{
+
+.loginStatus {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 30vh;
-  background-color: #33ccff;
+  background-color: #3cf;
 }
-.loginStatus .avatarUrl{
+
+.loginStatus .avatarUrl {
   width: 91px;
   height: 91px;
   border-radius: 50%;
 }
-.loginStatus view{
+
+.loginStatus view {
   margin-top: 20rpx;
+}
+
+.myTrends {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.oldTrends {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 50rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
+
+.trend {
+  display: flex;
+}
+
+.trend .date {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  margin-right: 20rpx;
+}
+
+.trend .date view:first-child {
+  font-size: 40rpx;
+}
+
+.trend .date view:last-child {
+  font-size: 20rpx;
+}
+
+.content {
+  flex: 5;
+  display: flex;
+  align-items: flex-start;
+}
+
+.content .pics, .content .video {
+  width: 200rpx;
+}
+
+.content .video {
+  position: relative;
+}
+
+.content .video .shade {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  opacity: 0;
+  z-index: 2;
+}
+
+.content .pics image, .content .video video {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.myWord {
+  padding-left: 20rpx;
+}
+
+.amount {
+  position: absolute;
+  top: 150rpx;
+  left: 345rpx;
+  color: #ccc;
+}
+
+.noTrend {
+  height: 30vh;
+  width: 100%;
+  line-height: 30vh;
+  text-align: center;
+  color: #3cf;
+  font-size: 60rpx;
 }

@@ -5,20 +5,19 @@
   </view>
   <view hidden="{{pre1}}" class="map">
     <image src="../../images/zhanjiang.png" mode="widthFix"></image>
-    <view class="city">
-      <view class="lz"></view>
-      <view class="xw"></view>
-      <view class="ck"></view>
-      <view class="xs"></view>
-      <view class="lj"></view>
-      <view class="pt"></view>
-      <view class="wc"></view>
-      <view class="mz"></view>
-      <view class="sx"></view>
-    </view>
+  </view>
+  <view class="city" hidden="{{pre1}}">
+    <navigator class="lz" url="../../pages/feature/feature?id=lz&place=雷州市"></navigator>
+    <navigator class="xw" url="../../pages/feature/feature?id=xw&place=徐闻县"></navigator>
+    <navigator class="ck" url="../../pages/feature/feature?id=ck&place=赤坎区"></navigator>
+    <navigator class="xs" url="../../pages/feature/feature?id=xs&place=霞山区"></navigator>
+    <navigator class="lj" url="../../pages/feature/feature?id=lj&place=廉江市"></navigator>
+    <navigator class="pt" url="../../pages/feature/feature?id=pt&place=坡头区"></navigator>
+    <navigator class="wc" url="../../pages/feature/feature?id=wc&place=吴川市"></navigator>
+    <navigator class="mz" url="../../pages/feature/feature?id=mz&place=麻章区"></navigator>
+    <navigator class="sx" url="../../pages/feature/feature?id=sx&place=遂溪县"></navigator>
   </view>
   <view hidden="{{pre2}}" class="understand">
-    <video id="preview" src="{{videoUrl}}" title="湛江蓝" enable-play-gesture="true" objectFit="cover"show-screen-lock-button="true"></video>
+    <video id="preview" src="{{videoUrl}}" title="湛江蓝" enable-play-gesture="true" objectFit="cover" show-screen-lock-button="true"></video>
   </view>
-
 </view>

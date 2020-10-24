@@ -5,9 +5,11 @@
     "pages/trends/trends",
     "pages/my/my",
     "pages/detail/detail",
-    "pages/addTrends/addTrends"
+    "pages/addTrends/addTrends",
+    "pages/feature/feature",
+    "pages/viewDetail/viewDetail",
+    "pages/weather/weather"
   ],
-
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",

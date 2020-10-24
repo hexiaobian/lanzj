@@ -1,23 +1,22 @@
 <view>
-  <textarea placeholder="分享愉悦的美景吧..."bindinput="getInput"></textarea>
+  <textarea placeholder="分享愉悦的美景吧..." bindinput="getInput"></textarea>
   <view class="share">
-  <view class="video" hidden="{{bVideo}}">
-      <video id="myVideo" src="{{VideoPath}}" show-fullscreen-btn="false" play-btn-position="center"controls="false" bindplay="videoFullScreen" bindfullscreenchange="fullScreenChange"></video>
+    <view class="video" hidden="{{bVideo}}">
+      <video id="myVideo" src="{{VideoPath}}" duration="60" muted="{{isMuted}}" show-fullscreen-btn="{{false}}" play-btn-position="center" bindtap="videoFullScreen"></video>
       <image src="../../images/close.png" class="close" bindtap="close" data-num="{{1}}"></image>
     </view>
-  <view class="pics" wx:for='{{PicPaths}}'>
+    <view class="pics" wx:for='{{PicPaths}}'>
       <view>
-        <image src="{{item}}"bindtap="preImage" data-index="{{index}}"></image>
+        <image src="{{item}}" bindtap="preImage" data-index="{{index}}"></image>
         <image src="../../images/close.png" class="close" bindtap="close" data-num="{{2}}" data-index="{{index}}"></image>
       </view>
     </view>
-    </view>
+  </view>
   <view class="upload">
     <view class="mVideo" bindtap="preVideo" hidden='{{myVideo}}'>
       <image src="../../images/video.png"></image>
     </view>
-    
-    <view class="mPic"bindtap="prePics" hidden="{{myPics}}">
+    <view class="mPic" bindtap="prePics" hidden="{{myPics}}">
       <image src="../../images/picture-new.png"></image>
     </view>
   </view>

@@ -1,0 +1,4 @@
+<view class="container">
+  <view class="title">{{viewPort.viewPorts}}</view>
+  <view class="deTailInfo">{{viewPort.detailContent==""?'无详细景点数据':viewPort.detailContent}}</view>
+</view>

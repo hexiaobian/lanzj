@@ -1,74 +1,181 @@
-page{
-  width: 100vw
+page {
+  width: 100vw;
 }
-.info{
+
+.info {
   position: relative;
   height: 25vh;
   margin: 0 auto 20rpx;
   padding: 0 30rpx;
   display: flex;
   align-items: center;
-  background:transparent; 
+  background: transparent;
   z-index: 2;
-  border-bottom: 1px solid #ddd; 
-}
-.shade{
-  position: absolute;
-  width: 90vw;
-  height: 25vh;
-  background-color: #33ccff; 
-  opacity: .5;
-  z-index: 1;
+  border-bottom: 1px solid #ddd;
 }
 
-.info view{
+.shade {
+  position: absolute;
+  left: 5vw;
+  width: 90vw;
+  height: 25vh;
+  opacity: 0.2;
+  z-index: 1;
+  text-align: center;
+}
+
+.shade image {
+  padding-top: 2%;
+  height: 90%;
+  border-radius: 20rpx;
+}
+
+.info view {
   margin-left: 20rpx;
   line-height: 91rpx;
 }
-.info button{
+
+.info button {
   position: absolute;
   width: 250rpx;
   height: 91rpx;
-  background-color: #33ccff !important;
+  background-color: #3cf !important;
   font-weight: normal;
   right: 20rpx;
 }
-.trends{
+
+.trends {
   display: flex;
   padding: 30rpx;
-  border-bottom: 1px solid #ddd; 
+  border-bottom: 1px solid #ddd;
 }
-.head{
+
+.head {
   flex: 1;
 }
-.main{
+
+.main {
   flex: 6;
 }
-.main .mName{
-  color: #33ccff;
+
+.main .mName {
+  color: #3cf;
   padding-bottom: 20rpx;
 }
-.main .source{
-padding: 25rpx 0;
-overflow: hidden
+
+.main .source {
+  padding: 25rpx 0;
+  overflow: hidden;
 }
-.main .source view{
+
+.main .source view {
   float: left;
   width: 180rpx;
   height: 200rpx;
   margin: 10rpx 10rpx 0 0;
 }
-.main .source view image{
+
+.main .source view image {
   width: 100%;
   height: 100%;
 }
-.main .source view video{
+
+.main .source view video {
   width: 100%;
   height: 100%;
 }
-.main .release{
+
+.main .release {
+  position: relative;
+  display: flex;
   height: 70rpx;
   line-height: 70rpx;
   color: #8a8a8a;
   font-size: 30rpx;
+}
+
+.main .location {
+  color: #3cf;
+  font-size: 30rpx;
+}
+
+.main .location::before {
+  content: '\e947';
+  font-family: 'icomoon';
+  padding-right: 10rpx;
+}
+
+.main .release .interact {
+  position: absolute;
+  right: 20rpx;
+}
+
+.main .release .interact .praise, .main .release .interact .comment {
+  height: 50rpx;
+  width: 50rpx;
+  padding: 10rpx;
+}
+
+.main .release .interact .praise image, .main .release .interact .comment image {
+  height: 100%;
+  width: 100%;
+}
+
+.releaseDay {
+  padding-right: 20rpx;
+}
+
+.perNum {
+  width: 100%;
+  word-break: break-all;
+  color: #3cf;
+  background-color: #f3f5f7;
+}
+
+.perNum::before {
+  content: '\e900';
+  font-family: 'icomoon';
+  color: #3cf;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.per {
+  padding-right: 10rpx;
+}
+
+.inputCom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 20rpx 0;
+  background-color: #f3f5f7;
+}
+
+.inputCom input {
+  width: 70%;
+  height: 60rpx;
+  padding-left: 20rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+
+.inputCom .button {
+  width: 20%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 62rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  border: 1px solid #f3f5f7;
+  color: #ccc;
 }

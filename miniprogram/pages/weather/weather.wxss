@@ -1,0 +1,85 @@
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+}
+
+.place {
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+  line-height: 15vh;
+  color: #fff;
+  font-size: 60rpx;
+  letter-spacing: 12rpx;
+  font-weight: bold;
+}
+
+.actuality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  font-size: 50rpx;
+  color: #fff;
+  letter-spacing: 10rpx;
+}
+
+.situation {
+  position: fixed;
+  top: 40vh;
+  width: 100vw;
+}
+
+.situation view {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.situation view image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.situation view .left {
+  display: flex;
+  justify-content: space-around;
+  width: 68%;
+}
+
+.situation view .left .image {
+  flex: 2;
+}
+
+.situation view .left text:first-of-type {
+  flex: 2;
+}
+
+.situation view .left text:last-of-type {
+  flex: 3;
+}
+
+.situation view .right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20rpx;
+}
